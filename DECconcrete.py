@@ -13,7 +13,6 @@ import pandas as pd
 import plotly.graph_objects as go
 import seaborn as sns
 import shap
-import shapiq
 import streamlit as st
 import xgboost as xgb
 from catboost import CatBoostRegressor, Pool, cv
