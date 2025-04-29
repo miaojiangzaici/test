@@ -1,4 +1,3 @@
-
 import os
 import random
 import time
@@ -47,8 +46,8 @@ class ModelApp:
 
     def upload_file(self):
         """上传输入和输出数据集。"""
-        self.input_filepath = st.file_uploader("上传输入数据集 (.xlsx)", type="xlsx", key="input")
-        self.output_filepath = st.file_uploader("上传输出数据集 (.xlsx)", type="xlsx", key="output")
+        self.input_filepath = "test_inputSSA.xlsx"
+        self.output_filepath = "test_outputSSA.xlsx"
 
         if self.input_filepath and self.output_filepath:
             self.input_df = pd.read_excel(self.input_filepath)
