@@ -329,11 +329,31 @@ def nsga3_inversion_jmetal(model_idxs, target_values):
         plt.rcParams['font.sans-serif'] = ['SimHei']  # 设置中文字体
         plt.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
 
-        ax.set_title(f'智能选取的电压值为：{best_val:.2f}V', fontsize=30)
-        ax.set_xlabel('训练步骤', fontsize=8)
-        ax.set_ylabel('电压的值', fontsize=8)
-        ax.grid(True, linestyle='--', alpha=0.5)
-        ax.legend(loc='upper right', fontsize=8)
+        for ax, param in zip(axes, changing_params):
+            line = ax.plot(df_history_filtered[param],
+                           color='#1f77b4',
+                           alpha=0.7,
+                           label='优化过程轨迹')
+
+            best_idx = len(df_history_filtered) - 1
+            best_val = best_values[param_indices[param]]
+
+            st.subheader(f"智能选取的电压值为：{best_val:.2f}V")
+
+            ax.scatter(best_idx, best_val,
+                       color='red',
+                       marker='*',
+                       s=120,
+                       edgecolor='black',
+                       zorder=10,
+                       label='最优解')
+
+            ax.set_title('电压优化过程可视化', fontsize=12)
+            ax.set_xlabel('迭代次数')
+            ax.set_ylabel('电压值 (V)')
+            ax.grid(True, linestyle='--', alpha=0.5)
+            ax.legend(loc='upper right')
+
 
     plt.tight_layout()
 
