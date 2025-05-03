@@ -37,8 +37,7 @@ from sklearn.inspection import PartialDependenceDisplay
 from mpl_toolkits.mplot3d import Axes3D
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
-plt.rcParams['font.sans-serif'] = ['SimHei']  # 设置中文字体
-plt.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
+
 
 class ModelApp:
     def __init__(self):
@@ -326,6 +325,9 @@ def nsga3_inversion_jmetal(model_idxs, target_values):
                    edgecolor='black',
                    zorder=10,
                    label='Optimal Value')
+
+        ax.rcParams['font.sans-serif'] = ['SimHei']  # 设置中文字体
+        ax.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
 
         ax.set_title(f'智能选取的电压值为：{best_val:.2f}V', fontsize=30)
         ax.set_xlabel('训练步骤', fontsize=8)
