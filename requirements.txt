@@ -2,7 +2,7 @@ joblib==1.4.2
 lightgbm==4.4.0
 matplotlib==3.9.2
 miceforest==6.0.3
-numpy==1.26.4
+numpy==1.23.5
 optuna==3.6.1
 pandas==2.2.0
 plotly==5.17.0
