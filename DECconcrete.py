@@ -333,26 +333,43 @@ def nsga3_inversion_jmetal(model_idxs, target_values):
             line = ax.plot(df_history_filtered[param],
                            color='#1f77b4',
                            alpha=0.7,
-                           label='优化过程轨迹')
+                           label='Optimizing process')
 
             best_idx = len(df_history_filtered) - 1
             best_val = best_values[param_indices[param]]
-
-            st.subheader(f"智能选取的电压值为：{best_val:.2f}V")
-
+            
             ax.scatter(best_idx, best_val,
                        color='red',
                        marker='*',
                        s=120,
                        edgecolor='black',
                        zorder=10,
-                       label='最优解')
+                       label='optimal solution')
 
-            ax.set_title('电压优化过程可视化', fontsize=12)
-            ax.set_xlabel('迭代次数')
-            ax.set_ylabel('电压值 (V)')
+            ax.set_title('optiminal process', fontsize=12)
+            ax.set_xlabel('iter')
+            ax.set_ylabel('voltage')
             ax.grid(True, linestyle='--', alpha=0.5)
             ax.legend(loc='upper right')
+
+            voltage_html = f"""
+            <center>
+            <div style="margin: 20px 0;">
+            <span style="font-size: 24px; font-weight: bold;">智能选取的电压值为：</span>
+            <span style="
+                font-size: 28px;
+                font-weight: 900;
+                color: #2c3e50;
+                background-color: #ecf0f1;
+                border: 2px solid #3498db;
+                border-radius: 5px;
+                padding: 5px 15px;
+                margin-left: 10px;
+            ">{best_val:.2f}V</span>
+            </div>
+            </center>
+            """
+            st.markdown(voltage_html, unsafe_allow_html=True)
 
 
     plt.tight_layout()
