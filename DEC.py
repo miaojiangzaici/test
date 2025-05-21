@@ -318,7 +318,7 @@ if __name__ == "__main__":
     st.markdown("""
             <div style="margin-top: 20px; text-align: center; font-size: 18px;">
             If you encounter similar regression-multi-objective optimization tasks, please visit 
-            <a href="https://dec.zhangyuting.cn/" target="_blank">https://dec.zhangyuting.cn/</a>, 
+            <a href="https://dec.zhangyuting.cn/" target="_blank">https://test.zhangyuting.cn/</a>, 
             which includes the full process of data upload, regression prediction, SHAP interpretability analysis, 
             and multi-objective optimization.
             </div>
