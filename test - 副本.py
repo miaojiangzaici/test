@@ -1089,7 +1089,7 @@ def nsga3_inversion_jmetal(model_idxs, target_values):
 if __name__ == "__main__":
     app = ModelApp()
 
-    st.title("Voltage inversion regulation of concrete direct electrical curing XGBoost-NSGAIII model")
+    st.title("General GUI for regression-multi-objective optimization tasks applicable to concrete problems")
     st.info("***Author: Yuting Zhang-School of Civil Engineering, Central South University***")
 
     uploaded_df_list = app.upload_file()
